@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Happy Birthday My Love â¤ï¸</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    height:100vh;
+    overflow:hidden;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:url('1000074082.jpg') center center/cover no-repeat;
+    position:relative;
+}
+
+body::before{
+    content:'';
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,0.25);
+    backdrop-filter: blur(1px);
+}
+
+.glow{
+    position:absolute;
+    top:-20px;
+    width:4px;
+    height:4px;
+    background:white;
+    border-radius:50%;
+    box-shadow:
+        0 0 8px white,
+        0 0 15px #b9d9ff,
+        0 0 25px #ffffff;
+    animation: fall linear infinite;
+    opacity:0.8;
+}
+
+@keyframes fall{
+    0%{
+        transform: translateY(-10vh);
+        opacity:0;
+    }
+    10%{
+        opacity:1;
+    }
+    100%{
+        transform: translateY(110vh);
+        opacity:0;
+    }
+}
+
+.confetti{
+    position:fixed;
+    width:10px;
+    height:10px;
+    background:random;
+    pointer-events:none;
+    animation: confettiFall linear forwards;
+}
+
+@keyframes confettiFall{
+    0%{
+        transform: translateY(0) rotateZ(0deg);
+        opacity:1;
+    }
+    100%{
+        transform: translateY(100vh) rotateZ(720deg);
+        opacity:0;
+    }
+}
+
+.card{
+    position:relative;
+    z-index:2;
+    width:90%;
+    max-width:700px;
+    padding:40px 30px;
+    text-align:center;
+    color:white;
+    border-radius:30px;
+    background:rgba(255,255,255,0.08);
+    backdrop-filter: blur(10px);
+    box-shadow:0 0 30px rgba(255,255,255,0.2);
+    animation: fadeIn 2s ease;
+}
+
+.card h1{
+    font-size:3rem;
+    margin-bottom:20px;
+    color:#fff;
+    text-shadow:0 0 10px #fff;
+}
+
+.card p{
+    font-size:1.2rem;
+    line-height:1.8;
+    margin-bottom:18px;
+    text-shadow:0 0 8px rgba(255,255,255,0.8);
+}
+
+.highlight{
+    color:#ffe6f2;
+}
+
+.button-group{
+    display:flex;
+    gap:15px;
+    justify-content:center;
+    margin-top:30px;
+    flex-wrap:wrap;
+}
+
+button{
+    padding:12px 25px;
+    font-size:1rem;
+    border:none;
+    border-radius:25px;
+    cursor:pointer;
+    transition:all 0.3s ease;
+    font-weight:600;
+    text-transform:uppercase;
+    letter-spacing:1px;
+}
+
+.btn-primary{
+    background:linear-gradient(135deg, #ff6b9d, #feca57);
+    color:#fff;
+    box-shadow:0 5px 15px rgba(255,107,157,0.4);
+}
+
+.btn-primary:hover{
+    transform:translateY(-3px);
+    box-shadow:0 8px 20px rgba(255,107,157,0.6);
+}
+
+.btn-secondary{
+    background:rgba(255,255,255,0.2);
+    color:#fff;
+    border:2px solid rgba(255,255,255,0.5);
+}
+
+.btn-secondary:hover{
+    background:rgba(255,255,255,0.3);
+    border-color:#fff;
+}
+
+.countdown{
+    margin-top:25px;
+    font-size:1.3rem;
+    color:#ffe6f2;
+    text-shadow:0 0 10px rgba(255,230,242,0.8);
+}
+
+@keyframes fadeIn{
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+.music-toggle{
+    position:fixed;
+    top:20px;
+    right:20px;
+    width:50px;
+    height:50px;
+    border-radius:50%;
+    background:rgba(255,255,255,0.2);
+    border:2px solid rgba(255,255,255,0.5);
+    color:white;
+    font-size:24px;
+    cursor:pointer;
+    z-index:100;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    transition:all 0.3s ease;
+    backdrop-filter:blur(10px);
+}
+
+.music-toggle:hover{
+    background:rgba(255,107,157,0.4);
+    transform:scale(1.1);
+}
+
+@media(max-width:600px){
+    .card h1{
+        font-size:2.2rem;
+    }
+
+    .card p{
+        font-size:1rem;
+    }
+
+    .card{
+        padding:30px 20px;
+    }
+
+    .button-group{
+        flex-direction:column;
+    }
+
+    button{
+        width:100%;
+    }
+
+    .music-toggle{
+        width:45px;
+        height:45px;
+        font-size:20px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<button class="music-toggle" id="musicToggle">ðŸ”Š</button>
+
+<script>
+for(let i=0;i<40;i++){
+    let glow=document.createElement('div');
+    glow.classList.add('glow');
+    glow.style.left=Math.random()*100+'vw';
+    glow.style.animationDuration=(5+Math.random()*10)+'s';
+    glow.style.animationDelay=Math.random()*5+'s';
+    glow.style.opacity=Math.random();
+    document.body.appendChild(glow);
+}
+</script>
+
+<div class="card">
+    <h1>Happy Birthday, my love â¤ï¸</h1>
+
+    <p>
+        You're not just part of my storyâ€¦<br>
+        you became my favorite chapter âœ¨
+    </p>
+
+    <p>
+        Thank you for bringing warmth, smiles,<br>
+        and beautiful moments into my life.
+    </p>
+
+    <p>
+        I love you more than words can express,<br>
+        and I truly wish all your dreams come true âœ¨
+    </p>
+
+    <p class="highlight">
+        And maybe one day soon,<br>
+        we'll celebrate your birthday together in real life â¤ï¸
+    </p>
+
+    <div class="countdown" id="countdown"></div>
+
+    <div class="button-group">
+        <button class="btn-primary" onclick="triggerConfetti()">ðŸŽ‰ Celebrate!</button>
+        <button class="btn-secondary" onclick="triggerHearts()">ðŸ’• Hearts!</button>
+    </div>
+</div>
+
+<script>
+const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+let isMusicPlaying = false;
+
+function playBirthdayMusic() {
+    const notes = [
+        { freq: 262, duration: 0.5 },
+        { freq: 262, duration: 0.5 },
+        { freq: 294, duration: 1 },
+        { freq: 262, duration: 1 },
+        { freq: 349, duration: 1 },
+        { freq: 330, duration: 2 },
+        { freq: 262, duration: 0.5 },
+        { freq: 262, duration: 0.5 },
+        { freq: 294, duration: 1 },
+        { freq: 262, duration: 1 },
+        { freq: 392, duration: 1 },
+        { freq: 349, duration: 2 },
+    ];
+
+    let time = audioContext.currentTime;
+    notes.forEach(note => {
+        playNote(note.freq, time, note.duration);
+        time += note.duration * 0.2;
+    });
+}
+
+function playNote(frequency, startTime, duration) {
+    const oscillator = audioContext.createOscillator();
+    const gainNode = audioContext.createGain();
+    
+    oscillator.connect(gainNode);
+    gainNode.connect(audioContext.destination);
+    
+    oscillator.frequency.value = frequency;
+    oscillator.type = 'sine';
+    
+    gainNode.gain.setValueAtTime(0.3, startTime);
+    gainNode.gain.exponentialRampToValueAtTime(0.01, startTime + duration);
+    
+    oscillator.start(startTime);
+    oscillator.stop(startTime + duration);
+}
+
+document.getElementById('musicToggle').addEventListener('click', function() {
+    if (!isMusicPlaying) {
+        playBirthdayMusic();
+        this.textContent = 'ðŸ”Š';
+        isMusicPlaying = true;
+    }
+});
+
+window.addEventListener('load', function() {
+    setTimeout(() => playBirthdayMusic(), 500);
+    isMusicPlaying = true;
+});
+</script>
+
+<script>
+function triggerConfetti() {
+    const colors = ['#ff6b9d', '#feca57', '#48dbfb', '#ff9ff3', '#54a0ff', '#ffe66d'];
+    
+    for(let i = 0; i < 50; i++) {
+        const confetti = document.createElement('div');
+        confetti.classList.add('confetti');
+        confetti.style.left = Math.random() * window.innerWidth + 'px';
+        confetti.style.top = '-10px';
+        confetti.style.background = colors[Math.floor(Math.random() * colors.length)];
+        confetti.style.animationDuration = (2 + Math.random() * 2) + 's';
+        confetti.style.animationDelay = Math.random() * 0.5 + 's';
+        
+        document.body.appendChild(confetti);
+        
+        setTimeout(() => confetti.remove(), 5000);
+    }
+    
+    playConfettiSound();
+}
+
+function triggerHearts() {
+    const hearts = ['â¤ï¸', 'ðŸ’•', 'ðŸ’–', 'ðŸ’—', 'ðŸ’'];
+    
+    for(let i = 0; i < 30; i++) {
+        const heart = document.createElement('div');
+        heart.textContent = hearts[Math.floor(Math.random() * hearts.length)];
+        heart.style.position = 'fixed';
+        heart.style.left = Math.random() * window.innerWidth + 'px';
+        heart.style.top = '-50px';
+        heart.style.fontSize = '30px';
+        heart.style.pointerEvents = 'none';
+        heart.style.animation = `confettiFall ${2 + Math.random() * 2}s linear forwards`;
+        heart.style.opacity = '1';
+        
+        document.body.appendChild(heart);
+        
+        setTimeout(() => heart.remove(), 5000);
+    }
+    
+    playHeartSound();
+}
+
+function playConfettiSound() {
+    const now = audioContext.currentTime;
+    const osc = audioContext.createOscillator();
+    const gain = audioContext.createGain();
+    
+    osc.connect(gain);
+    gain.connect(audioContext.destination);
+    
+    osc.frequency.setValueAtTime(800, now);
+    osc.frequency.exponentialRampToValueAtTime(400, now + 0.1);
+    
+    gain.gain.setValueAtTime(0.2, now);
+    gain.gain.exponentialRampToValueAtTime(0.01, now + 0.1);
+    
+    osc.start(now);
+    osc.stop(now + 0.1);
+}
+
+function playHeartSound() {
+    const now = audioContext.currentTime;
+    const osc = audioContext.createOscillator();
+    const gain = audioContext.createGain();
+    
+    osc.connect(gain);
+    gain.connect(audioContext.destination);
+    
+    osc.frequency.setValueAtTime(523.25, now);
+    osc.type = 'sine';
+    
+    gain.gain.setValueAtTime(0.2, now);
+    gain.gain.exponentialRampToValueAtTime(0.01, now + 0.2);
+    
+    osc.start(now);
+    osc.stop(now + 0.2);
+}
+</script>
+
+<script>
+function startCountdown() {
+    const birthdayDate = new Date('2026-06-15').getTime();
+    
+    function updateCountdown() {
+        const now = new Date().getTime();
+        const difference = birthdayDate - now;
+        
+        if (difference > 0) {
+            const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((difference / (1000 * 60 * 60)) % 24);
+            const minutes = Math.floor((difference / 1000 / 60) % 60);
+            const seconds = Math.floor((difference / 1000) % 60);
+            
+            document.getElementById('countdown').innerHTML = 
+                `<strong>Time together countdown:</strong><br>
+                ${days}d ${hours}h ${minutes}m ${seconds}s â³`;
+        } else {
+            document.getElementById('countdown').innerHTML = 
+                '<strong>Today is the day! ðŸŽ‰</strong>';
+        }
+    }
+    
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+}
+
+startCountdown();
+</script>
+
+</body>
+</html>
